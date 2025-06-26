@@ -4,6 +4,11 @@
 
 This repository provides a comprehensive `.bashrc` configuration along with supporting scripts and configuration files to enhance your terminal experience in Unix-like operating systems. It configures the shell session by setting up aliases, defining functions, customizing the prompt, and more, significantly improving the terminal's usability and power.
 
+## Andrew's Reason for this fork
+
+I wanted to be able to install myBash from an Ansible playbook as part of my VM build process. I have modified the setup.sh so this hopefully works.
+I also made a couple minor tweaks to the .bashrc to suit my personal preferences and use cases. Overall all very minor stuff. Chris and others deserve all the credit here.
+
 ## Table of Contents
 
 - [Installation](#installation)
