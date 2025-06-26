@@ -180,10 +180,10 @@ install_font() {
         fi
     fi
 }
-
+# ABishop modified for silent install say via Ansible
 install_starship_and_fzf() {
     if ! command_exists starship; then
-        if ! curl -sS https://starship.rs/install.sh | sh; then
+        if ! curl -sS https://starship.rs/install.sh | sh -s -- -y; then
             print_colored "$RED" "Something went wrong during starship install!"
             exit 1
         fi
@@ -196,7 +196,8 @@ install_starship_and_fzf() {
             print_colored "$YELLOW" "FZF directory already exists. Skipping installation."
         else
             git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-            ~/.fzf/install
+            # ABishop modified for silent install say via Ansible
+            ~/.fzf/install --all
         fi
     else
         printf "Fzf already installed\n"
